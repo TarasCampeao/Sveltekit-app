@@ -5,36 +5,70 @@
     import TodoPreview from '$lib/images/preview-todo.jpg';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-
-<ul class="image-list flex">
-    <li class="image-list__item">
-        <a href="/">
-            <img alt="Gradient Image" src={GradientPreview} />
-        </a>
-    </li>
-    <li class="image-list__item">
-        <a href="/">
-            <img alt="Header Image" src={HeaderPreview} />
-        </a>
-    </li>
-    <li class="image-list__item">
-        <a href="/">
-            <img alt="Hover Image" src={HoverPreview} />
-        </a>    
-    </li>
-    <li class="image-list__item">
-        <a href="/">
-            <img alt="Todo Image" src={TodoPreview} />
-        </a>    
-    </li>
-</ul>
-
+<main class="container">
+    <ul class="image-list flex flex-wrap">
+        <li class="list-item">
+            <a href="/gradient-background-logo" class="link-item">
+                <img class="image-cell" alt="Gradient Image" src={GradientPreview} />
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="/website-header" class="link-item">
+                <img class="image-cell" alt="Header Image" src={HeaderPreview} />
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="/navigation-hover" class="link-item">
+                <img class="image-cell" alt="Hover Image" src={HoverPreview} />
+            </a>    
+        </li>
+        <li class="list-item">
+            <a href="/to-do-app" class="link-item">
+                <img class="image-cell" alt="Todo Image" src={TodoPreview} />
+            </a>    
+        </li>
+    </ul>
+</main>
 
 <style lang="scss">
-    .gradient-logo {
-        height: 80vh;
-        width: 80vw;
-        background: red;
+.image-list {
+    margin-top: 40px;
+}
+.list-item {
+    width: calc(50% - 20px);
+    height: 40vh;
+    margin: 10px;
+}
+.image-cell {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s linear;
+}
+.link-item {
+    position: relative;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        background: rgba(0, 0, 0, .3);
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: .3s opacity linear;
     }
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+        .image-cell {
+            transform: scale(1.1);
+        }
+    }
+}
 </style>

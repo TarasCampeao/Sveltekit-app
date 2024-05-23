@@ -1,0 +1,58 @@
+body {
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+    color: #272C3A;
+    background-color: #ffffff;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+textarea,
+input {
+    outline: none;
+}
+
+input {
+    height: 40px;
+}
+
+a,
+button {
+    text-decoration: none;
+    outline: none;
+    transition: .3s linear;
+}
+
+a:hover,
+button:hover {
+    transition: .3s linear
+}
+
+button:focus {
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul, ol, p, tr, img, i {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &:before, &:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
