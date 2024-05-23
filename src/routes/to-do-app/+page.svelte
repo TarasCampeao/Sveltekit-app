@@ -2,9 +2,16 @@
     import SmileHappy from '$lib/icons/SmileHappy.svelte'
     import SmileSad from '$lib/icons/SmileSad.svelte'
     import { fly } from 'svelte/transition';
+    import { fade } from 'svelte/transition';
+    import { onMount } from 'svelte'
 
     let tasks = [];
     let newTask = '';
+    let animateToDo = false
+
+    onMount(() => {
+        animateToDo = true
+    })
 
     function addTask() {
         if (newTask) {
@@ -12,46 +19,108 @@
             newTask = '';
         }
     }
-
-    function removeTask(index) {
-        tasks.splice(index, 1);
-        tasks = [...tasks];
-    }
 </script>
 
 <div class="todo-list h-screen flex items-center justify-center">
-    <div class="todo-wrapper w-full shadow-l">
-        <div class="todo-wrapper__date text-center">
-            <div class="todo-wrapper__month font-semibold">December</div>
-            <div class="todo-wrapper__day">Tuesday, December 22</div>
-        </div>
-        <div class="task-wrapper">
-            <ul class="task-list">
-             {#if tasks.length}
-                {#each tasks as task, index (task)}
-                    <li class="task-item">
-                        <div class={task.checked ? 'task-item__wrapper flex items-center justify-between checked-item' : 'task-item__wrapper flex items-center justify-between'}>
-                            <input class="task-item__checkbox w-full h-full" type="checkbox" bind:checked={task.checked}>
-                            <div class="task-item__content">{task.content}</div>
-                            <div class="smile-box">
-                                <div class="smile-box__icons">
-                                    <SmileSad />
-                                    <SmileHappy />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                {/each}
-            {:else}
-                <div class="text-center">No tasks for today!</div>
-            {/if}
-            </ul>
-            <div class="add-task flex items-center flex-col">
-                <input class="task-input w-full" bind:value={newTask} placeholder="Add task" />
-                <button class="add-btn font-semibold rounded-3xl" on:click={addTask}>Add</button>
+    {#if animateToDo}
+        <div transition:fade={{
+                delay: 500,
+                duration: 800
+            }} class="todo-wrapper w-full shadow-l">
+            <div class="todo-wrapper__date text-center">
+                <div class="todo-wrapper__month font-semibold overflow-hidden">
+                    <div transition:fly={{
+                        delay: 1800,
+                        duration: 1000,
+                        x: 0,
+                        y: 50
+                    }}>December</div>
+                </div>
+                <div class="todo-wrapper__day overflow-hidden">
+                    <div transition:fly={{
+                        delay: 1900,
+                        duration: 1000,
+                        x: 0,
+                        y: 50
+                    }}>Tuesday, December 22</div>
+                </div>
+            </div>
+            <div class="divider-box relative w-full flex">
+                <div class="divider-line overflow-hidden">
+                    <div transition:fly={{
+                        delay: 1200,
+                        duration: 1000,
+                        x: 100,
+                        y: 0 }}
+                        class="divider-box__first h-full">
+                    </div>
+                </div>
+                <div class="divider-line overflow-hidden">
+                    <div transition:fly={{
+                        delay: 1200,
+                        duration: 1000,
+                        x: -100,
+                        y: 0 }} class="divider-box__second h-full">
+                    </div>
+                </div>
+            </div>
+            <div class="task-wrapper">
+                <div class="overflow-hidden">
+                    <ul transition:fly={{
+                            delay: 2000,
+                            duration: 1000,
+                            x: 0,
+                            y: 50
+                        }} class="task-list">
+                        {#if tasks.length}
+                            {#each tasks as task, index (task)}
+                                <li class="task-item relative overflow-hidden">
+                                    <div class={task.checked ? 'task-item__wrapper flex items-center justify-between checked-item' : 'task-item__wrapper flex items-center justify-between'}>
+                                        <input
+                                            class="task-item__checkbox w-full h-full absolute"
+                                            type="checkbox"
+                                            bind:checked={task.checked}
+                                        >
+                                        <div class="task-item__content overflow-hidden relative">{task.content}</div>
+                                        <div class="smile-box overflow-hidden">
+                                            <div class="smile-box__icons">
+                                                <SmileSad />
+                                                <SmileHappy />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {/each}
+                        {:else}
+                            <div class="text-center overflow-hidden">No tasks for today!</div>
+                        {/if}
+                    </ul>
+                </div>
+                <div class="add-task flex items-center flex-col">
+                    <div class="overflow-hidden w-full">
+                        <input transition:fly={{
+                            delay: 2100,
+                            duration: 1000,
+                            x: 0,
+                            y: 50 }}
+                            class="task-input w-full"
+                            bind:value={newTask}
+                            placeholder="Add task"
+                        />
+                    </div>
+                    <div class="overflow-hidden btn-wrapper">
+                        <button transition:fly={{
+                            delay: 2200,
+                            duration: 1000,
+                            x: 0,
+                            y: 50 }}
+                            class="add-btn font-semibold rounded-3xl"
+                            on:click={addTask}>Add</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    {/if}
 </div>
 
 <style lang="scss">
@@ -64,8 +133,7 @@
     padding: 40px 0 0 0;
     transition: height .3s linear;
     &__date {
-        padding-bottom: 45px;
-        border-bottom: 4px solid #F5F6FB;
+        padding-bottom: 40px;
     }
     &__month {
         color: #605F6F;
@@ -79,12 +147,22 @@
         letter-spacing: .8;
     }
 }
+.divider-line {
+    width: 50%;
+    height: 4px;
+    div {
+        background: #F5F6FB;
+    }
+}
 .task-input {
     border: 1px solid #D5D5ED;
     padding: 10px 5px 10px 15px;
 }
 .add-task {
     margin-top: 35px;
+}
+.btn-wrapper {
+    transform: translateY(50%);
 }
 .add-btn {
     background: #3DCE6A;
@@ -93,7 +171,6 @@
     padding: 8px 40px;
     letter-spacing: 1px;
     transition: .3s linear;
-    transform: translateY(50%);
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             background: #0be64f;
@@ -106,8 +183,6 @@
 }
 .task-item {
     margin-top: 12px;
-    position: relative;
-    overflow: hidden;
     &__wrapper {
         animation-name: fadeIn;
         animation-delay: .3s;
@@ -120,19 +195,13 @@
         margin: 0;
     }
     &__checkbox {
-        position: absolute;
         cursor: pointer;
         opacity: 0;
         z-index: 10;
     }
-    &__text {
-        position: relative;
-    }
     &__content {
         transition: .3s linear;
-        position: relative;
         text-overflow: ellipsis;
-        overflow: hidden;
         white-space: nowrap;
         max-width: calc(100% - 32px);
     }
@@ -140,7 +209,6 @@
 .smile-box {
     width: 30px;
     height: 30px;
-    overflow: hidden;
     &__icons {
         transition: .3s linear;
     }

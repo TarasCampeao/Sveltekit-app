@@ -9,22 +9,38 @@
     <ul class="image-list flex flex-wrap">
         <li class="list-item">
             <a href="/gradient-background-logo" class="link-item h-full">
-                <img class="image-cell w-full h-full" alt="Gradient Image" src={GradientPreview} />
+                <img
+                    class="image-cell w-full h-full"
+                    alt="Gradient Image"
+                    src={GradientPreview}
+                />
             </a>
         </li>
         <li class="list-item">
             <a href="/website-header" class="link-item h-full">
-                <img class="image-cell w-full h-full" alt="Header Image" src={HeaderPreview} />
+                <img
+                    class="image-cell w-full h-full"
+                    alt="Header Image"
+                    src={HeaderPreview}
+                />
             </a>
         </li>
         <li class="list-item">
             <a href="/navigation-hover" class="link-item h-full">
-                <img class="image-cell w-full h-full" alt="Hover Image" src={HoverPreview} />
+                <img
+                    class="image-cell w-full h-full"
+                    alt="Hover Image"
+                    src={HoverPreview}
+                />
             </a>    
         </li>
         <li class="list-item">
             <a href="/to-do-app" class="link-item h-full">
-                <img class="image-cell w-full h-full" alt="Todo Image" src={TodoPreview} />
+                <img
+                    class="image-cell w-full h-full"
+                    alt="Todo Image"
+                    src={TodoPreview}
+                />
             </a>    
         </li>
     </ul>

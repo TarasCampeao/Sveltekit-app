@@ -19,8 +19,8 @@
                 duration: 1500,
                 opacity: 0,
                 start: 0
-            }} class="logo bg-white flex flex-col items-center justify-center shadow-xl">
-            <div class="image-wrapper">
+            }} class="logo bg-white flex flex-col items-center justify-center shadow-xl overflow-hidden">
+            <div class="image-wrapper overflow-hidden">
                 <div transition:fly={{
                     delay: 1700,
                     duration: 800,
@@ -31,7 +31,7 @@
                     <BingLogo class="block" />
                 </div>
             </div>
-            <div class="logo-text">
+            <div class="logo-text overflow-hidden">
                 <div transition:fly={{
                     delay: 2100,
                     duration: 800,
@@ -51,7 +51,6 @@
     .logo {
         height: 200px;
         width: 200px;
-        overflow: hidden;
         border-radius: 70px;
     }
     .logo-text {
@@ -59,9 +58,5 @@
         margin-top: 10px;
         font-size: 18px;
         letter-spacing: 1.2px;
-        overflow: hidden;
-    }
-    .image-wrapper {
-        overflow: hidden;
     }
 </style>

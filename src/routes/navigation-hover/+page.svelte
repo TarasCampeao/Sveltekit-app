@@ -2,15 +2,15 @@
 	import { fly } from 'svelte/transition';
     import { onMount } from 'svelte'
     
-    let animate = false
+    let animateNav = false
 
     onMount(() => {
-        animate = true
+        animateNav = true
     })
 </script>
 
 <div class="nav-hover h-screen flex items-center justify-center">
-    {#if animate}
+    {#if animateNav}
         <nav class="navigation">
             <ul class="nav-list flex"
                 transition:fly={{
