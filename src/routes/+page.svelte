@@ -8,23 +8,23 @@
 <main class="container">
     <ul class="image-list flex flex-wrap">
         <li class="list-item">
-            <a href="/gradient-background-logo" class="link-item">
-                <img class="image-cell" alt="Gradient Image" src={GradientPreview} />
+            <a href="/gradient-background-logo" class="link-item h-full">
+                <img class="image-cell w-full h-full" alt="Gradient Image" src={GradientPreview} />
             </a>
         </li>
         <li class="list-item">
-            <a href="/website-header" class="link-item">
-                <img class="image-cell" alt="Header Image" src={HeaderPreview} />
+            <a href="/website-header" class="link-item h-full">
+                <img class="image-cell w-full h-full" alt="Header Image" src={HeaderPreview} />
             </a>
         </li>
         <li class="list-item">
-            <a href="/navigation-hover" class="link-item">
-                <img class="image-cell" alt="Hover Image" src={HoverPreview} />
+            <a href="/navigation-hover" class="link-item h-full">
+                <img class="image-cell w-full h-full" alt="Hover Image" src={HoverPreview} />
             </a>    
         </li>
         <li class="list-item">
-            <a href="/to-do-app" class="link-item">
-                <img class="image-cell" alt="Todo Image" src={TodoPreview} />
+            <a href="/to-do-app" class="link-item h-full">
+                <img class="image-cell w-full h-full" alt="Todo Image" src={TodoPreview} />
             </a>    
         </li>
     </ul>
@@ -40,15 +40,12 @@
     margin: 10px;
 }
 .image-cell {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     transition: .3s linear;
 }
 .link-item {
     position: relative;
     display: block;
-    height: 100%;
     overflow: hidden;
     &:after {
         content: "";

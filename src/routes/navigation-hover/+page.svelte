@@ -1,6 +1,5 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
     import { onMount } from 'svelte'
     
     let animate = false
