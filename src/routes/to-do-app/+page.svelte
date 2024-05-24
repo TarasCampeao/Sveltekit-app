@@ -52,7 +52,7 @@
                         duration: 1000,
                         x: 100,
                         y: 0 }}
-                        class="divider-box__first h-full">
+                        class="divider-box__first divider-line__animate h-full">
                     </div>
                 </div>
                 <div class="divider-line overflow-hidden">
@@ -60,7 +60,7 @@
                         delay: 1200,
                         duration: 1000,
                         x: -100,
-                        y: 0 }} class="divider-box__second h-full">
+                        y: 0 }} class="divider-box__second divider-line__animate h-full">
                     </div>
                 </div>
             </div>
@@ -150,7 +150,7 @@
 .divider-line {
     width: 50%;
     height: 4px;
-    div {
+    &__animate {
         background: #F5F6FB;
     }
 }
@@ -204,6 +204,15 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         max-width: calc(100% - 32px);
+    }
+}
+.task-item__wrapper {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            .task-item__content {
+                color: #C2BCC8;
+            }
+        }
     }
 }
 .smile-box {

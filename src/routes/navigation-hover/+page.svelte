@@ -20,13 +20,13 @@
                     opacity: 0, }}
                 >
                 <li class="nav-list__item">
-                    <a href="/" class="nav-list__link">Animation</a>
+                    <a href="/" class="nav-list__link relative">Animation</a>
                 </li>
                 <li class="nav-list__item">
-                    <a href="/" class="nav-list__link">Branding</a>
+                    <a href="/" class="nav-list__link relative">Branding</a>
                 </li>
                 <li class="nav-list__item">
-                    <a href="/" class="nav-list__link">Illustration</a>
+                    <a href="/" class="nav-list__link relative">Illustration</a>
                 </li>
             </ul>
         </nav>
@@ -43,7 +43,6 @@
         color: #726F80;
         letter-spacing: 1.2px;
         margin: 0 30px;
-        position: relative;
         padding-bottom: 15px;
         &:after,
         &:before {
@@ -72,9 +71,6 @@
                 width: 25%;
             }
         }
-    }
-    &__item {
-        animation-name: slidein;
     }
 }
 </style>

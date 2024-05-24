@@ -5,7 +5,7 @@
 </script>
 
 <div class="wrapper">
-	<nav>
+	<nav class="container">
 		<a href="/">Home</a>
 		<a href="/navigation-hover">Navigation</a>
 		<a href="/gradient-background-logo">Gradient Background Logo</a>
