@@ -11,17 +11,23 @@
         {
             "firstImage":"src/lib/images/slider-img/first-slider.jpg",
             "secondImage":"src/lib/images/slider-img/first-slider-2.jpg",
-            "thirdImage":"src/lib/images/slider-img/first-slider-3.jpg"
+            "thirdImage":"src/lib/images/slider-img/first-slider-3.jpg",
+            "refNumber": "Ref. 6687/787",
+            "nameStuff": "White loose dress"
         },
         {
             "firstImage":"src/lib/images/slider-img/second-slider.jpg",
             "secondImage":"src/lib/images/slider-img/second-slider-2.jpg",
-            "thirdImage":"src/lib/images/slider-img/second-slider-3.jpg"
+            "thirdImage":"src/lib/images/slider-img/second-slider-3.jpg",
+            "refNumber": "Ref. 5542/932",
+            "nameStuff": "Blue loose dress"
         },
         {
             "firstImage":"src/lib/images/slider-img/third-slider.jpg",
             "secondImage":"src/lib/images/slider-img/third-slider-2.jpg",
-            "thirdImage":"src/lib/images/slider-img/third-slider-3.jpg"
+            "thirdImage":"src/lib/images/slider-img/third-slider-3.jpg",
+            "refNumber": "Ref. 1213/787",
+            "nameStuff": "Red loose dress"
         },
 
     ];
@@ -36,6 +42,9 @@
 </script>
 
 <div class="website-header md:h-screen relative flex flex-col justify-between">
+    <div class="preloader-box hidden md:flex items-center justify-center">
+        <div class="preloader-box__title overflow-hidden"><div>Summer 2020</div></div>
+    </div>
     <Sidemenu bind:open/>
     <Navbar bind:sidemenu={open}/>
     <div class="heading-box flex flex-col justify-between relative">
@@ -80,9 +89,9 @@
                                     </div>
                                     <div class="info-box flex justify-between">
                                         <div class="goods-type flex flex-col lg:flex-row lg:items-center">
-                                            <div>Ref. 6687/787</div>
+                                            <div>{image.refNumber}</div>
                                             <div class="goods-type__line"></div>
-                                            <div>White loose dress</div>
+                                            <div>{image.nameStuff}</div>
                                         </div>
                                         <a href="/" class="btn-slider overflow-hidden relative font-semibold w-full block uppercase text-center">Shop now</a>
                                     </div>
@@ -110,8 +119,6 @@
 
 
 <style lang="scss">
-@import "$lib/styles/fonts.scss";
-
 .website-header {
     background: #F7EEE4;
     padding: 60px 24px;
@@ -396,6 +403,48 @@
     margin-top: 40px;
     @media (min-width: 1024px) {
         margin: 0;
+    }
+}
+.preloader-box {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #B29A7C;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    animation-name: preloaderScreen;
+    animation-delay: 2s;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    &__title {
+        color: #ffffff;
+        font-size: 80px;
+        font-family: "Karlotte";
+        letter-spacing: 2px;
+        div {
+            animation-name: preloaderTitle;
+            animation-delay: .3s;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            transform: translateY(100%);
+        }
+    }
+}
+@keyframes preloaderScreen {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+@keyframes preloaderTitle {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
     }
 }
 </style>
