@@ -128,7 +128,7 @@
 }
 .heading-box {
     z-index: 5;
-    margin-top: 50px;
+    margin-top: 60px;
     @media (min-width: 1024px) {
         color: #ffffff;
         max-width: 520px;
@@ -146,7 +146,7 @@
         line-height: 1;
         letter-spacing: 1.5px;
         font-family: "Karlotte";
-        margin-top: 40px;
+        margin-top: 16px;
         @media (min-width: 1440px) {
             font-size: 120px;
         }
