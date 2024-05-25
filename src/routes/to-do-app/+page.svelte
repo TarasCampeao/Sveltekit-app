@@ -244,22 +244,4 @@
         }       
     }
 }
-@keyframes widthLine {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-@keyframes fadeIn {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 </style>

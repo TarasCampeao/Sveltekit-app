@@ -1,8 +1,5 @@
 <script>
-    import '$lib/styles/reset.scss';
 	import '$lib/styles/main.scss';
-	import "$lib/styles/fonts.scss";
-	import "$lib/styles/app.css";
 	import HomeLogo from '$lib/icons/HomeLogo.svelte';
 </script>
 

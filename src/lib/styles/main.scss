@@ -1,13 +1,5 @@
-.container {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.website-header,
-.homepage {
-	& + .home-btn {
-        display: none;
-    }
-}
+@import "reset.scss";
+@import "fonts.scss";
+@import "style.scss";
+@import "keyframes.scss";
+@import "app.css";
