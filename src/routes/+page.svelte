@@ -33,6 +33,7 @@
                     x: -100,
                     y: 0
                 }} class="h-full">
+
                     <a href="/gradient-background-logo" class="link-item relative overflow-hidden h-full">
                         <img
                             class="image-cell w-full h-full"
@@ -40,7 +41,7 @@
                             src={GradientPreview}
                         />
                         <div class="link-item__title absolute uppercase text-center w-full overflow-hidden">
-                            <div>Gradient Background Logo</div>
+                            <div class="link-item__text">Gradient Background Logo</div>
                         </div>
                     </a>
                 </div>
@@ -59,7 +60,7 @@
                             src={HeaderPreview}
                         />
                         <div class="link-item__title absolute uppercase text-center w-full overflow-hidden">
-                            <div>Website header</div>
+                            <div class="link-item__text">Website header</div>
                         </div>
                     </a>
                 </div>
@@ -78,7 +79,7 @@
                             src={HoverPreview}
                         />
                         <div class="link-item__title absolute uppercase text-center w-full overflow-hidden">
-                            <div>Navigation Hover</div>
+                            <div class="link-item__text">Navigation Hover</div>
                         </div>
                     </a>    
                 </div>
@@ -97,7 +98,7 @@
                             src={TodoPreview}
                         />
                         <div class="link-item__title absolute uppercase text-center w-full overflow-hidden">
-                            <div>To Do App</div>
+                            <div class="link-item__text">To Do App</div>
                         </div>
                     </a>  
                 </div>  
@@ -127,10 +128,10 @@
         opacity: 0;
         color: #ffffff;
         z-index: 5;
-        div {
-            transition: .5s linear;
-            transform: translateY(100%);
-        }
+    }
+    &__text {
+        transition: .5s linear;
+        transform: translateY(100%);
     }
     &:after {
         content: "";

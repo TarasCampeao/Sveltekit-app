@@ -4,9 +4,9 @@
 
 <div class="hamburger-menu flex justify-between cursor-pointer" class:open on:click={() => open = !open}>
     <div class="menu-icon h-full flex flex-col justify-between">
-        <div class="w-full"></div>
-        <div class="w-full"></div>
-        <div class="w-full"></div>
+        <div class="menu-icon__cell w-full"></div>
+        <div class="menu-icon__cell w-full"></div>
+        <div class="menu-icon__cell w-full"></div>
     </div>
     <span class="menu-word">Menu</span>
 </div>
@@ -35,7 +35,7 @@
         }
         .menu-icon {
             width: 17px;
-            div {
+            &__cell {
                 &:nth-of-type(2) {
                     width: 0%;
                     transition: width .3s linear;
@@ -63,7 +63,7 @@
     width: 15px;
     margin-right: 25px;
     transition: width .3s linear;
-    div {
+    &__cell {
         height: 2px;
         background: #272C3A;
         transition: .3s linear;

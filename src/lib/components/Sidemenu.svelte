@@ -83,20 +83,11 @@
 .open {
     transform: translateX(0%);
     .sidemenu-link {
-        animation-name: showInLink;
+        animation-name: fadeIn;
         animation-delay: .8s;
         animation-duration: 1s;
         animation-fill-mode: forwards;
         transform: translateY(100%);
-    }
-}
-@keyframes showInLink {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
 </style>

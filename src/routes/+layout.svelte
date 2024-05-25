@@ -33,17 +33,5 @@
 			box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .7);
 		}
 	}
-	svg {
-		width: 30px;
-		height: 30px;
-	}
-}
-@keyframes showHome {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
 }
 </style>

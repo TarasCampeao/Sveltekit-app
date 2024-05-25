@@ -43,7 +43,9 @@
 
 <div class="website-header md:h-screen relative flex flex-col justify-between">
     <div class="preloader-box hidden md:flex items-center justify-center">
-        <div class="preloader-box__title overflow-hidden"><div>Summer 2020</div></div>
+        <div class="preloader-box__title overflow-hidden">
+            <div class="preloader-box__text">Summer 2020</div>
+        </div>
     </div>
     <Sidemenu bind:open/>
     <Navbar bind:sidemenu={open}/>
@@ -422,13 +424,13 @@
         font-size: 80px;
         font-family: "Karlotte";
         letter-spacing: 2px;
-        div {
-            animation-name: preloaderTitle;
-            animation-delay: .3s;
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-            transform: translateY(100%);
-        }
+    }
+    &__text {
+        animation-name: preloaderTitle;
+        animation-delay: .3s;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        transform: translateY(100%);
     }
 }
 </style>
