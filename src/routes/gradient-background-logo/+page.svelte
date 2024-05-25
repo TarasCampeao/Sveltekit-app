@@ -1,5 +1,5 @@
 <script>
-    import BingLogo from '$lib/icons/BingLogo.svelte'
+    import BingLogo from '$lib/icons/BingLogo.svelte';
     import { scale } from 'svelte/transition';
     import { fade } from 'svelte/transition';
     import { fly } from 'svelte/transition';

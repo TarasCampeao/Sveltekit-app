@@ -3,7 +3,7 @@
     import SmileSad from '$lib/icons/SmileSad.svelte'
     import { fly } from 'svelte/transition';
     import { fade } from 'svelte/transition';
-    import { onMount } from 'svelte'
+    import { onMount } from 'svelte';
 
     let tasks = [];
     let newTask = '';
@@ -77,7 +77,7 @@
                                 <li class="task-item relative overflow-hidden">
                                     <div class={task.checked ? 'task-item__wrapper flex items-center justify-between checked-item' : 'task-item__wrapper flex items-center justify-between'}>
                                         <input
-                                            class="task-item__checkbox w-full h-full absolute"
+                                            class="task-item__checkbox w-full h-full absolute cursor-pointer"
                                             type="checkbox"
                                             bind:checked={task.checked}
                                         >
@@ -182,7 +182,9 @@
     padding: 0 15px;
 }
 .task-item {
-    margin-top: 12px;
+    &:nth-of-type(n+2) {
+        margin-top: 12px;
+    }
     &__wrapper {
         animation-name: fadeIn;
         animation-delay: .3s;
@@ -191,11 +193,7 @@
         transform: translateY(100%);
         opacity: 0;
     }
-    &:first-child {
-        margin: 0;
-    }
     &__checkbox {
-        cursor: pointer;
         opacity: 0;
         z-index: 10;
     }
