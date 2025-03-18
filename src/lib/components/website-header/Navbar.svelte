@@ -1,6 +1,6 @@
 <script>
-    import Hamburger from '$lib/components/Hamburger.svelte'
-    import Multilang from '$lib/components/Multilang.svelte'
+    import Hamburger from '$lib/components/website-header/Hamburger.svelte'
+    import Multilang from '$lib/components/website-header/Multilang.svelte'
 
 	export let sidemenu = false
 </script>

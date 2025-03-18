@@ -1,4 +1,5 @@
 <script>
+    import NavLink from '$lib/components/navigation-hover/NavLink.svelte'
 	import { fly } from 'svelte/transition';
     import { onMount } from 'svelte'
     
@@ -19,15 +20,11 @@
                     x: 0, y: 50,
                     opacity: 0, }}
                 >
-                <li class="nav-list__item">
-                    <a href="/" class="nav-list__link relative">Animation</a>
-                </li>
-                <li class="nav-list__item">
-                    <a href="/" class="nav-list__link relative">Branding</a>
-                </li>
-                <li class="nav-list__item">
-                    <a href="/" class="nav-list__link relative">Illustration</a>
-                </li>
+                <NavLink let:key>
+                    <li class="nav-list__item">
+                        <a href="/" class="nav-list__link relative">{key}</a>
+                    </li>
+                </NavLink>
             </ul>
         </nav>
     {/if}

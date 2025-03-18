@@ -1,6 +1,6 @@
 <script>
-    import Sidemenu from '$lib/components/Sidemenu.svelte'
-    import Navbar from '$lib/components/Navbar.svelte'
+    import Sidemenu from '$lib/components/website-header/Sidemenu.svelte'
+    import Navbar from '$lib/components/website-header/Navbar.svelte'
     import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
     import '@splidejs/svelte-splide/css';
 
@@ -157,6 +157,7 @@
         }
     }
 }
+
 .social-list {
     margin-top: 40px;
     &__item {
