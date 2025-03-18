@@ -31,7 +31,7 @@
                     <BingLogo class="block" />
                 </div>
             </div>
-            <div class="logo-text overflow-hidden">
+            <div class="gray-dark logo-text overflow-hidden">
                 <div transition:fly={{
                     delay: 2100,
                     duration: 800,
@@ -54,7 +54,7 @@
         border-radius: 70px;
     }
     .logo-text {
-        color: #505050;
+        //color: #505050;
         margin-top: 10px;
         font-size: 18px;
         letter-spacing: 1.2px;
